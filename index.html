@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Are You Ready?</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style> 
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            width: auto;
+        }
+        .main-container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /*justify-content: center;*/
+            text-align: center;
+            background-color: #b5f4e2;
+        }
+        .title-header {
+            color: rgb(71, 44, 82);
+            font-family: 'Manrope', sans-serif; /*Para mapalitan si font, thanks Google fonts*/
+            margin-top: 10%;
+        }
+        p {
+            font-family: 'Manrope', sans-serif; 
+            color: rgb(71, 44, 82);
+        }
+        button {
+            background-color: #edfbfa; 
+            width: 200px;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition-duration: 0.4s; 
+            font-family: 'Manrope', sans-serif;
+            color: rgb(71, 44, 82);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1 class="title-header">are you ready ?</h1>
+        <p id="message"></p>
+        <button type="button" onclick="ShowNotSure()">not sure</button>
+        <button type="button" onclick="ShowNo()">no</button>
+        <button type="button" onclick="ShowYes()">yes</button>    
+    </div>
+
+    <script>
+        function ShowYes() { /*Wag basag trip, gamit ako madaming pages hahaha*/
+            window.location.href = "./yes.html";
+        }
+
+        function ShowNotSure() {
+            document.getElementById("message").textContent = "syempre di ito nagana";
+        }
+
+        function ShowNo() {
+            document.getElementById("message").textContent = "wala din mang yayari dito";
+        }
+    </script>
+</body>
+</html>

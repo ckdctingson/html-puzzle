@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Are You Ready?</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style> 
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            width: auto;
+        }
+        .main-container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: #b5f4e2;
+        }
+        .sub-container {
+            height: 65%;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color:#edfbfa;
+            margin-top: 10%;
+            box-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+            border-radius: 12px;
+        }
+        .title-header {
+            color: rgb(71, 44, 82);
+            font-family: 'Manrope', sans-serif;
+            margin-top: 2%;
+        }
+        .subtitle-header {
+            color: rgb(71, 44, 82);
+            font-family: 'Manrope', sans-serif;
+            margin-top: 0;
+        }
+        .text-box {
+            /*border: 2px solid rgb(71, 44, 82);*/
+            /*border-radius: 12px;*/
+            margin-top: 0;
+            max-width: 300px;
+            text-align: center;
+            font-family: 'Manrope', sans-serif;
+            font-size: 18px;
+            color: rgb(71, 44, 82);
+            /*box-shadow: 2px 4px 10px rgba(0,0,0,0.2);*/
+        }
+        button {
+            background-color:#b5f4e2;
+            width: 200px;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition-duration: 0.4s; 
+            font-family: 'Manrope', sans-serif;
+            color: rgb(71, 44, 82);
+            margin-top: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="sub-container", id="sub-container">
+        </div>
+    </div>
+    <script>
+        const name = localStorage.getItem("name");
+        const answer = localStorage.getItem("answer"); 
+
+        console.log("Name:", name);
+        console.log("Answer:", answer);
+
+        if (answer && answer.replace(/[^a-z]/gi, "").toLowerCase() === "yesiamsure") {
+            document.getElementById("sub-container").innerHTML = `
+                <div class="text-box">
+                    Hi, <strong>${name}</strong>!<br>
+                    Congratulations 100% Passed !!!<br>
+                    Let's do team work 🤝<br>
+                    HAHAHAHAH, effort na ito aahhhh
+                </div>
+            `;
+        } else {
+            document.getElementById("sub-container").innerHTML = `
+                <div class="text-box">
+                    Hi, <strong>${name || "Guest"}</strong>!<br>
+                    You Failed 😢.<br>
+                    But you have Unlimited Trials<br>
+                    <button class="button" onclick="StartAgain()">Try Again</button>
+                </div>
+            `;
+        }
+
+        function StartAgain() {
+            window.location.href = "index.html"; 
+        }
+    </script>
+</body>
+</html>

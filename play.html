@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Are You Ready?</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style> 
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            width: auto;
+        }
+        .main-container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /*justify-content: center;*/
+            text-align: center;
+            background-color: #b5f4e2;
+        }
+        .title-header {
+            color: rgb(71, 44, 82);
+            font-family: 'Manrope', sans-serif; /*Para mapalitan si font, thanks Google fonts*/
+            margin-top: 2%;
+        }
+        .subtitle-header {
+            color: rgb(71, 44, 82);
+            font-family: 'Manrope', sans-serif; /*Para mapalitan si font, thanks Google fonts*/
+            margin-top: 0;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px; /* Adds space between form elements */
+        }
+        .puzzle {
+            margin-top: 0;
+            margin-bottom: 1%;
+            max-width: 40%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .phrase {
+            margin-top: 0;
+            margin-bottom: 1%;
+            max-width: 40%;
+            height: 5%;
+            border-radius: 5px;
+        }
+        .answer-input {
+            padding: 15px; 
+            border: 1px solid #ccc;
+            border-radius: 12px; 
+            width: 350px; 
+            font-size: 18px; 
+            font-family: 'Manrope', sans-serif;
+            text-align: center;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+        button {
+            background-color: #edfbfa; 
+            width: 200px;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition-duration: 0.4s; 
+            font-family: 'Manrope', sans-serif;
+            color: rgb(71, 44, 82);
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1 class="title-header">instructions</h1>
+        <h4 class="subtitle-header">find 10 familiar words, then get the first letter of each word to complete the phrase below. input your final answer. (hint: 1 tagalog word/10)</h4>
+        <img class="puzzle" src="./puzzle.PNG" alt="puzzle" />
+        <img class="phrase" src="./phrase.PNG" alt="phrase" />
+        <form class="form-container">
+            <div>
+                <input id="answer" type="text" class="answer-input" placeholder="your answer" />
+             </div>
+            <button type="button" onclick="Enter()">enter</button>
+        </form>
+    </div>
+    <script>
+        function Enter() { /*Wag basag trip, gamit ako madaming pages hahaha*/
+            const answer = document.getElementById("answer").value;
+            localStorage.setItem("answer", answer);
+            window.location.href = "./enter.html";
+        }
+    </script>
+</body>
+</html>

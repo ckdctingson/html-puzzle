@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Are You Ready?</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style> 
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            width: auto;
+        }
+        .main-container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /*justify-content: center;*/
+            text-align: center;
+            background-color: #b5f4e2;
+        }
+
+        .title-header {
+            color: rgb(71, 44, 82);
+            font-family: 'Manrope', sans-serif; /*Para mapalitan si font, thanks Google fonts*/
+            margin-top: 10%;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px; /* Adds space between form elements */
+        }
+
+        .name-input {
+            padding: 15px; 
+            border: 1px solid #ccc;
+            border-radius: 12px; 
+            width: 350px; 
+            font-size: 18px; 
+            font-family: 'Manrope', sans-serif;
+            text-align: center;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            background-color: #edfbfa; 
+            width: 200px;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition-duration: 0.4s; 
+            font-family: 'Manrope', sans-serif;
+            color: rgb(71, 44, 82);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1 class="title-header">enter name</h1>
+        <form class="form-container">
+            <div>
+                <input id="name" type="text" class="name-input" placeholder="your name" />
+             </div>
+            <button type="button" onclick="Play()">play</button>
+        </form>        
+    </div>
+    <script>
+        function Play() { /*Wag basag trip, gamit ako madaming pages hahaha*/
+            const name = document.getElementById("name").value;
+            localStorage.setItem("name", name);
+            window.location.href = "./play.html";
+        }
+    </script>
+</body>
+</html>
